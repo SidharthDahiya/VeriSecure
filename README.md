@@ -13,8 +13,13 @@
 </p>
 
 <p align="center">
-  <strong>🏆 Built exclusively for the Starknet Reignite Hackathon</strong>
+  <strong>🏆 Built exclusively for the Starknet Re{ignite} Hackathon</strong>
 </p>
+
+<p align="center">
+  <b>🚀 Deployed on Starknet Sepolia Testnet</b>
+</p>
+
 
 
 ## 🌟 Overview
