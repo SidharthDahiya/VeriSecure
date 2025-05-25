@@ -18,26 +18,27 @@ VeriSecure is a smart tool that helps make blockchain programs safer by finding 
 ## ✨ Key Features
 
 ### 🤖 AI-Powered Security Analysis
-- **Google Gemini Integration**: Advanced AI model specifically trained for smart contract vulnerabilities
-- **Multi-Language Support**: Comprehensive analysis for Solidity and Cairo contracts
-- **Intelligent Severity Classification**: Automated categorization of High, Medium, Low, and Informational issues
-- **Contextual Explanations**: AI-generated insights with detailed remediation suggestions
+- **Google Gemini Integration**: Uses advanced AI to find security problems in smart contracts
+- **Multiple Languages**: Supports both Solidity and Cairo programming languages  
+- **Automatic Ranking**: Ranks issues as High, Medium, Low, or Informational priority
+- **Clear Solutions**: Provides easy-to-understand explanations and how to fix problems
 
 ### 🔗 Blockchain Certificate System
-- **Starknet Native**: Permanent audit certificates stored on Starknet blockchain
-- **Public Verification**: Anyone can verify audit authenticity via Starkscan
-- **Immutable Proof**: Cryptographic evidence of audit completion and results
-- **Wallet Integration**: Seamless connection with ArgentX and Braavos wallets
+- **Permanent Records**: Stores audit certificates forever on the Starknet blockchain
+- **Public Verification**: Anyone can check and verify audits on Starkscan
+- **Secure Proof**: Provides Cryptographic evidence that audits were completed
+- **Easy Wallet Connection**: Works seamlessly with ArgentX and Braavos wallets
 
-### 📊 Professional Reporting Suite
-- **Interactive Dashboard**: Real-time vulnerability analysis with visual charts
-- **PDF Certificates**: Professional audit reports with branding
-- **Detailed Analytics**: Comprehensive breakdown by detector and severity
+### 📊 Professional Reporting Suite  
+- **Live Dashboard**: Interactive charts showing real-time analysis results
+- **PDF Reports**: Generates a professional audit report you can download
+- **Detailed Breakdown**: Shows exactly what types of issues were found and how serious they are
 
 ### 🎨 Modern User Experience
-- **Glassmorphism Design**: Beautiful, modern interface with smooth animations
-- **Dark/Light Modes**: User preference customization
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Glassmorphism-Gradient Design**: Clean, modern interface with smooth animations
+- **Theme Options**: Choose between dark and light modes
+- **Works Everywhere**: Optimized for desktop, tablet, and mobile devices
+- **Drag & Drop**: Simply drag your files to start the audit process
 
 ## 🚀 Live Demo & Verification
 
