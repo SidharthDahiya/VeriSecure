@@ -17,14 +17,18 @@
 </p>
 
 
-
-
-
 ## 🌟 Overview
 
 VeriSecure is a smart tool that helps make blockchain programs safer by finding security problems quickly and easily. It uses advanced artificial intelligence to check code for vulnerabilities and then stores a secure, immutable certificate on the blockchain to prove the program has been properly checked.
 
 **🎯 Problem Solved**: Getting blockchain programs checked for security issues is usually expensive, slow, and hard to verify. VeriSecure makes this process faster, more affordable, and trustworthy for everyone.
+
+## 🏛️ Platform Architecture
+
+<p align="center">
+  <img src="web/public/images/architecture.png" alt="VeriSecure Architecture Diagram" width="500" />
+</p>
+
 
 
 ## ✨ Key Features
