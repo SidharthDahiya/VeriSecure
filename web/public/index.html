@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeriSecure | Smart Contract Security Auditing</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <script src="https://unpkg.com/starknet@5.14.1/dist/index.iife.js"></script>
+  <script src="https://unpkg.com/starknetkit@1.1.5/dist/index.iife.js"></script>
+</head>
+<body>
+
+  <div class="navbar container">
+  <a href="/" class="logo">
+    <img src="images/logo.png" alt="VeriSecure Logo" class="navbar-logo">
+    VeriSecure
+  </a>
+
+  <div class="navbar-actions">
+    <button id="wallet-connect" class="btn btn-secondary" title="Connect your Starknet wallet">
+      <i class='bx bx-wallet'></i> Connect Wallet
+    </button>
+    <button id="view-registry" class="btn btn-secondary" title="View public audit registry on Starkscan">
+      <i class='bx bx-history'></i>
+    </button>
+    <button id="theme-toggle" class="theme-toggle" title="Toggle dark/light mode">
+      <i class='bx bx-moon'></i>
+    </button>
+  </div>
+</div>
+
+
+
+  <header>
+    <div class="container">
+      <h1>
+  Audit Intelligently.<br>
+  Deploy Fearlessly.
+</h1>
+      <p>VeriSecure delivers AI-powered security auditing for smart contracts, ensuring robust security and trust in your blockchain applications.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section upload-section">
+      <h2>Upload Contract</h2>
+      <form id="audit-form">
+        <div class="file-upload-area" id="dropzone">
+          <input type="file" id="contract-file" name="contract" accept=".sol,.cairo" required>
+          <div class="icon">
+            <i class='bx bx-upload'></i>
+          </div>
+          <h3>Drag & drop your contract file</h3>
+          <p>or click to browse (.sol or .cairo files)</p>
+          <div class="file-info" id="file-info" style="display: none;">
+            <i class='bx bx-file file-icon'></i>
+            <span class="file-name" id="file-name"></span>
+            <span class="file-size" id="file-size"></span>
+            <button type="button" class="btn btn-secondary text-sm" id="remove-file">
+              <i class='bx bx-x'></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="options-grid">
+          <div class="option-card">
+            <div class="option-label">
+              <span>AI Analysis</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="use-ai" name="useAI" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="option-description">
+              Enable Gemini AI to enhance vulnerability analysis
+            </div>
+          </div>
+
+          <div class="option-card">
+            <div class="option-label">
+              <span>Generate PDF</span>
+              <label class="toggle-switch">
+                <input type="checkbox" id="generate-pdf" name="generatePdf" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="option-description">
+              Create downloadable PDF report
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-btn" class="btn btn-primary">
+          <i class='bx bx-shield-quarter'></i>
+          Start Audit
+        </button>
+      </form>
+    </section>
+
+    <section class="section status-section" id="status-section" style="display:none;">
+      <div class="status-container">
+        <div class="status-steps">
+          <div class="status-step active" data-step="upload">
+            <div class="step-icon"><i class='bx bx-upload'></i></div>
+            <div class="step-label">Upload</div>
+          </div>
+          <div class="status-step" data-step="parsing">
+            <div class="step-icon"><i class='bx bx-code'></i></div>
+            <div class="step-label">Parsing</div>
+          </div>
+          <div class="status-step" data-step="analysis">
+            <div class="step-icon"><i class='bx bx-search-alt'></i></div>
+            <div class="step-label">Analysis</div>
+          </div>
+          <div class="status-step" data-step="ai">
+            <div class="step-icon"><i class='bx bx-brain'></i></div>
+            <div class="step-label">AI Review</div>
+          </div>
+          <div class="status-step" data-step="report">
+            <div class="step-icon"><i class='bx bx-file'></i></div>
+            <div class="step-label">Report</div>
+          </div>
+        </div>
+
+        <h2 id="status-title">Auditing Contract...</h2>
+        <p id="status-message">Analyzing smart contract for vulnerabilities</p>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar" style="--progress: 25%"></div>
+          <div class="progress-text">
+            <span id="progress-percent">25%</span>
+            <span id="progress-stage">Parsing contract</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!-- blockchain features section -->
+<section class="section blockchain-features-section" id="blockchain-features-section">
+  <h2>🔗 Blockchain Verification</h2>
+  <p>Create permanent, publicly verifiable audit certificates on Starknet blockchain.</p>
+
+  <div class="blockchain-info-card">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-icon">
+          <i class='bx bx-lock-alt'></i>
+        </div>
+        <div class="info-content">
+          <h4>Immutable Records</h4>
+          <p>Permanent storage on Starknet blockchain</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <i class='bx bx-globe'></i>
+        </div>
+        <div class="info-content">
+          <h4>Public Verification</h4>
+          <p>Verify authenticity on Starkscan explorer</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <i class='bx bx-time-five'></i>
+        </div>
+        <div class="info-content">
+          <h4>Blockchain Timestamp</h4>
+          <p>Cryptographic proof of completion date</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="blockchain-actions">
+    <button id="submit-to-blockchain" class="btn btn-primary" style="display:none;">
+      <i class='bx bx-upload'></i> Create Blockchain Certificate
+    </button>
+  </div>
+
+  <div class="blockchain-note">
+    <p><i class='bx bx-info-circle'></i> Blockchain features require a connected Starknet wallet</p>
+  </div>
+</section>
+
+
+    <section class="section results-section" id="results-section" style="display:none;">
+      <div class="tab-container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="summary">
+            <i class='bx bx-pie-chart-alt'></i> Summary
+          </button>
+          <button class="tab-btn" data-tab="vulnerabilities">
+            <i class='bx bx-error'></i> Vulnerabilities
+          </button>
+          <button class="tab-btn" data-tab="ai-analysis">
+            <i class='bx bx-brain'></i> AI Analysis
+          </button>
+          <button class="tab-btn" data-tab="report">
+            <i class='bx bx-file'></i> Report
+          </button>
+
+        </div>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="summary">
+            <h2>Audit Summary</h2>
+
+            <div class="summary-grid">
+              <div class="stat-card high">
+                <div class="stat-header">
+                  <div class="stat-icon"><i class='bx bxs-error-circle'></i></div>
+                  <div class="severity-badge high">HIGH</div>
+                </div>
+                <div class="stat-value" id="high-count">0</div>
+                <div class="stat-label">High Severity Issues</div>
+              </div>
+
+              <div class="stat-card medium">
+                <div class="stat-header">
+                  <div class="stat-icon"><i class='bx bxs-error'></i></div>
+                  <div class="severity-badge medium">MEDIUM</div>
+                </div>
+                <div class="stat-value" id="medium-count">0</div>
+                <div class="stat-label">Medium Severity Issues</div>
+              </div>
+
+              <div class="stat-card low">
+                <div class="stat-header">
+                  <div class="stat-icon"><i class='bx bxs-info-circle'></i></div>
+                  <div class="severity-badge low">LOW</div>
+                </div>
+                <div class="stat-value" id="low-count">0</div>
+                <div class="stat-label">Low Severity Issues</div>
+              </div>
+
+              <div class="stat-card info">
+                <div class="stat-header">
+                  <div class="stat-icon"><i class='bx bx-bulb'></i></div>
+                  <div class="severity-badge info">INFO</div>
+                </div>
+                <div class="stat-value" id="info-count">0</div>
+                <div class="stat-label">Informational</div>
+              </div>
+            </div>
+
+            <div class="chart-container">
+              <canvas id="issues-chart"></canvas>
+            </div>
+
+            <div class="info-grid">
+              <div class="info-card">
+                <h3>Contract Information</h3>
+                <ul class="info-list">
+                  <li>
+                    <span class="info-label">Filename</span>
+                    <span class="info-value" id="contract-name">-</span>
+                  </li>
+                  <li>
+                    <span class="info-label">Audit Date</span>
+                    <span class="info-value" id="audit-date">-</span>
+                  </li>
+                  <li>
+                    <span class="info-label">Total Issues</span>
+                    <span class="info-value" id="total-issues">-</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="info-card">
+                <h3>Issues by Detector</h3>
+                <div id="detector-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="vulnerabilities">
+            <h2>Detected Vulnerabilities</h2>
+            <div class="filters-bar">
+              <div class="filter-group">
+                <span class="filter-label">Severity:</span>
+                <select id="severity-filter" class="filter-select">
+                  <option value="all">All Severities</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                  <option value="informational">Informational</option>
+                </select>
+              </div>
+              <div class="search-box">
+                <i class='bx bx-search search-icon'></i>
+                <input type="text" id="vuln-search" placeholder="Search vulnerabilities...">
+              </div>
+            </div>
+            <div id="vulnerability-list"></div>
+          </div>
+
+          <div class="tab-pane" id="ai-analysis">
+            <div class="ai-container">
+              <div class="ai-header">
+                <div class="ai-title">
+                  <i class='bx bx-brain'></i>
+                  Gemini AI Analysis
+                </div>
+              </div>
+              <div class="ai-content" id="ai-content">
+                <p class="ai-placeholder">AI analysis will appear here when available.</p>
+              </div>
+              <div class="ai-meta" id="ai-meta" style="display:none;">
+                <div><strong>Model:</strong> <span id="ai-model"></span></div>
+                <div><strong>Processing time:</strong> <span id="ai-processing-time"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="report">
+            <h2>Audit Report</h2>
+            <p class="mb-4">Download the complete audit report containing all findings and recommendations.</p>
+
+            <div class="report-actions">
+              <a href="#" id="download-pdf" class="btn btn-primary" target="_blank" style="display:none;">
+                <i class='bx bxs-file-pdf'></i>
+                Download PDF Report
+              </a>
+              <button id="generate-report-btn" class="btn btn-primary" style="display:none;">
+                <i class='bx bxs-file'></i>
+                Generate Report
+              </button>
+            </div>
+
+            <div class="download-options">
+                <p class="text-center text-sm" style="color: var(--text-secondary);">
+                    The report will be generated in PDF format with all vulnerabilities and AI analysis included.
+                </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+<section class="section blockchain-section" id="blockchain-section" style="display:none;">
+  <h2>🔗 Blockchain Certificate</h2>
+
+  <div class="certificate-card">
+    <div class="certificate-header">
+      <div class="certificate-icon">
+        <i class='bx bx-shield-check'></i>
+      </div>
+      <div class="certificate-info">
+        <h3>Audit Certificate Issued</h3>
+        <p>This audit has been permanently recorded on Starknet blockchain</p>
+      </div>
+    </div>
+
+    <div class="certificate-details">
+      <div class="detail-item">
+        <span class="label">Transaction Hash:</span>
+        <a href="#" id="tx-link" target="_blank" class="blockchain-link">
+          <span id="tx-hash">-</span>
+          <i class='bx bx-external-link'></i>
+        </a>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Contract Registry:</span>
+        <a href="https://sepolia.starkscan.co/contract/0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c" target="_blank" class="blockchain-link">
+          <span>View on Starkscan</span>
+          <i class='bx bx-external-link'></i>
+        </a>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Audit ID:</span>
+        <span id="audit-id" class="audit-id">-</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="label">Verification:</span>
+        <button id="verify-certificate" class="btn btn-success btn-sm">
+          <i class='bx bx-check-shield'></i> Verify Certificate
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="blockchain-actions">
+  <button id="submit-to-blockchain" class="btn btn-primary">
+    <i class='bx bx-upload'></i> Submit to Blockchain
+  </button>
+  <button id="share-certificate" class="btn btn-secondary" style="display:none;">
+    <i class='bx bx-share'></i> Share Certificate
+  </button>
+</div>
+
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="images/logo.png" alt="VeriSecure Footer Logo" class="footer-logo">
+      <p>© 2025 VeriSecure | Starknet Hackathon: Re{ignite}</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/starknet@6.11.0/dist/index.iife.js"></script>
+  <script src="js/starknet-integration.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

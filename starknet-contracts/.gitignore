@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Build artifacts
+target/
+.scarb/
+
+# Private keys (CRITICAL)
+.starknet_accounts/
+.starknet_keystores/
+
+# Temporary files
+uploads/
+reports/*.pdf
+temp/
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+logs/

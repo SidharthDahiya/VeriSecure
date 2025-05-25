@@ -1,0 +1,20 @@
+smart-contract-auditor/
+├── package.json
+├── README.md
+├── src/
+│   ├── index.js
+│   ├── parser/
+│   │   └── solidity-parser.js
+│   ├── detectors/
+│   │   ├── index.js
+│   │   ├── reentrancy-detector.js
+│   │   ├── overflow-underflow-detector.js
+│   │   ├── unchecked-calls-detector.js
+│   │   └── access-control-detector.js
+│   ├── reporter/
+│   │   └── index.js
+│   └── cli/
+│       └── index.js
+└── test/
+    └── test-contracts/
+        └── sample-contract.sol
