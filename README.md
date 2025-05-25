@@ -1,10 +1,23 @@
-# VeriSecure 🛡️
+<p align="center">
+  <img src="web/public/images/logo.png" alt="VeriSecure Logo" width="200" height="200" />
+</p>
 
-> AI-Powered Smart Contract Security Auditing Platform Built on Starknet
+<h1 align="center">VeriSecure</h1>
+<p align="center"><i>AI-Powered Smart Contract Security Auditing Platform Built on Starknet</i></p>
 
-[![Starknet](https://img.shields.io/badge/Built%20on-Starknet-purple)](https://starknet.io/)
-[![AI Powered](https://img.shields.io/badge/AI-Google%20Gemini-blue)](https://ai.google.dev/)
-[![Live Contract](https://img.shields.io/badge/Contract-Live%20on%20Sepolia-green)](https://sepolia.starkscan.co/contract/0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c)
+<p align="center">
+  <a href="https://starknet.io/"><img src="https://img.shields.io/badge/Built%20on-Starknet-purple" alt="Starknet"></a>
+  <a href="https://ai.google.dev/"><img src="https://img.shields.io/badge/AI-Google%20Gemini-blue" alt="AI Powered"></a>
+  <a href="https://sepolia.starkscan.co/contract/0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c"><img src="https://img.shields.io/badge/Contract-Live%20on%20Sepolia-green" alt="Live Contract"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
+</p>
+
+<p align="center">
+  <strong>🏆 Built exclusively for the Starknet Reignite Hackathon</strong>
+</p>
+
+
+
 
 
 ## 🌟 Overview
@@ -13,7 +26,6 @@ VeriSecure is a smart tool that helps make blockchain programs safer by finding 
 
 **🎯 Problem Solved**: Getting blockchain programs checked for security issues is usually expensive, slow, and hard to verify. VeriSecure makes this process faster, more affordable, and trustworthy for everyone.
 
-**🏆 Built exclusively for the Starknet Re{ignite} Hackathon, showcasing the power of Starknet's blockchain technology.**
 
 ## ✨ Key Features
 
@@ -211,5 +223,7 @@ fn get_audit_count() -> u256
 ## 📄 License
 
 Licensed under the [MIT License](LICENSE)
+
+
 
 
