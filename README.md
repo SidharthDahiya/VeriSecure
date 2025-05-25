@@ -9,9 +9,11 @@
 
 ## 🌟 Overview
 
-VeriSecure revolutionizes smart contract security by combining cutting-edge AI analysis with blockchain-verified audit certificates. Built natively for Starknet, it provides developers with comprehensive vulnerability detection and creates permanent, publicly verifiable audit records on-chain.
+VeriSecure is a smart tool that helps make blockchain programs safer by finding security problems quickly and easily. It uses advanced artificial intelligence to check code for vulnerabilities and then stores a secure, immutable certificate on the blockchain to prove the program has been properly checked.
 
-**🎯 Problem Solved**: Traditional smart contract auditing is expensive, time-consuming, and lacks transparency. VeriSecure democratizes security analysis while ensuring audit authenticity through blockchain verification.
+**🎯 Problem Solved**: Getting blockchain programs checked for security issues is usually expensive, slow, and hard to verify. VeriSecure makes this process faster, more affordable, and trustworthy for everyone.
+
+**🏆 Built exclusively for the Starknet Re{ignite} Hackathon, showcasing the power of Starknet's blockchain technology.**
 
 ## ✨ Key Features
 
