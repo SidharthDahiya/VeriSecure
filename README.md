@@ -69,6 +69,9 @@ VeriSecure is a smart tool that helps make blockchain programs safer by finding 
 
 **🧪 Test the Platform:** [Try VeriSecure Now](https://verisecure-audit.vercel.app/) 
 
+**📋 Sample Audit Report:** [View Generated Report](web/public/audit-report.pdf)
+- See what VeriSecure AI-generated reports look like
+
 ## 🛠️ Technology Stack
 
 | Layer | Technologies |
