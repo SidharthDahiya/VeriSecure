@@ -72,6 +72,30 @@ VeriSecure is a smart tool that helps make blockchain programs safer by finding 
 **📋 Sample Audit Report:** [View Generated Report](web/public/audit-report.pdf)
 - See what VeriSecure AI-generated reports look like
 
+
+## 🎯 Complete Usage Workflow
+
+### Step 1: Contract Upload
+- Drag & drop or select your `.sol` or `.cairo` contract file  
+- Real-time validation ensures compatibility  
+- Upload progress indicators
+
+### Step 2: Analysis Configuration
+- Enable **AI Analysis**  
+- Opt for **PDF Generation**  
+- Configure parameters
+
+### Step 3: Security Review
+- 📊 Dashboard Overview  
+- 🔍 Detailed Vulnerabilities with severity ratings  
+- 🤖 AI Insights & remediation suggestions  
+- 📄 Downloadable PDF Reports
+
+### Step 4: Blockchain Verification
+- 🔗 Connect ArgentX or Braavos wallet  
+- ⛓️ Submit certificate to Starknet  
+- ✅ Public, immutable audit verification
+
 ## 🛠️ Technology Stack
 
 | Layer | Technologies |
@@ -159,29 +183,6 @@ Ensure you have the following tools installed:
 Open [http://localhost:3000](http://localhost:3000)
 
 
-## 🎯 Complete Usage Workflow
-
-### Step 1: Contract Upload
-- Drag & drop or select your `.sol` or `.cairo` contract file  
-- Real-time validation ensures compatibility  
-- Upload progress indicators
-
-### Step 2: Analysis Configuration
-- Enable **AI Analysis**  
-- Opt for **PDF Generation**  
-- Configure parameters
-
-### Step 3: Security Review
-- 📊 Dashboard Overview  
-- 🔍 Detailed Vulnerabilities with severity ratings  
-- 🤖 AI Insights & remediation suggestions  
-- 📄 Downloadable PDF Reports
-
-### Step 4: Blockchain Verification
-- 🔗 Connect ArgentX or Braavos wallet  
-- ⛓️ Submit certificate to Starknet  
-- ✅ Public, immutable audit verification
-
 
 ## 🏗️ Smart Contract System
 
@@ -214,7 +215,6 @@ fn is_contract_audited(contract_hash: felt252) -> bool
 // Get total audits
 fn get_audit_count() -> u256
 ```
-
 
 
 ### Key Achievements
