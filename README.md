@@ -9,22 +9,14 @@
   <a href="https://starknet.io/"><img src="https://img.shields.io/badge/Built%20on-Starknet-purple" alt="Starknet"></a>
   <a href="https://ai.google.dev/"><img src="https://img.shields.io/badge/AI-Google%20Gemini-blue" alt="AI Powered"></a>
   <a href="https://sepolia.starkscan.co/contract/0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c"><img src="https://img.shields.io/badge/Contract-Live%20on%20Sepolia-green" alt="Live Contract"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
 </p>
 
-<p align="center">
-  <strong>🏆 Built exclusively for the Starknet Re{ignite} Hackathon</strong>
-</p>
-
-<p align="center">
-  <b>🚀 Deployed on Starknet Sepolia Testnet</b>
-</p>
 
 
 
 ## 🌟 Overview
 
-VeriSecure is a smart tool that helps make blockchain programs safer by finding security problems quickly and easily. It uses advanced artificial intelligence to check code for vulnerabilities and then stores a secure, immutable certificate on the blockchain to prove the program has been properly checked.
+VeriSecure is an AI-powered smart contract security auditing platform built natively for Starknet. It leverages Google Gemini AI to detect vulnerabilities in Solidity and Cairo contracts, shows how serious each security problem is and provides fix suggestions. Audit certificates are permanently stored on the Starknet blockchain for transparent public verification via Starkscan to prove the smart contract has been officially audited.
 
 **🎯 Problem Solved**: Getting blockchain programs checked for security issues is usually expensive, slow, and hard to verify. VeriSecure makes this process faster, more affordable, and trustworthy for everyone.
 
@@ -70,7 +62,6 @@ VeriSecure is a smart tool that helps make blockchain programs safer by finding 
 **🧪 Test the Platform:** [Try VeriSecure Now](https://verisecure-audit.vercel.app/) 
 
 **📋 Sample Audit Report:** [View Generated Report](web/public/audit-report.pdf)
-- See what VeriSecure AI-generated reports look like
 
 
 ## 🎯 Complete Usage Workflow
@@ -231,10 +222,6 @@ fn get_audit_count() -> u256
 - **Security First** validation  
 - **Premium User Experience**
 
-
-## 📄 License
-
-Licensed under the [MIT License](LICENSE)
 
 
 
