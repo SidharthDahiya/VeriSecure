@@ -2,15 +2,15 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 require('dotenv').config();
 
-// The API key is provided, but ideally should be in an .env file for security
-const API_KEY = process.env.GEMINI_API_KEY || "AIzaSyD1BeUUpKOtxzW2j84g4LcxRbF_pwW39k4";
+
+const API_KEY = process.env.GEMINI_API_KEY || "ENTER API KEY";
 
 // Initialize Gemini API
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 async function analyzeContract(contractCode) {
   try {
-    // Use the gemini-2.0-flash model instead of gemini-pro
+    
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const prompt = `You are a smart contract security expert specialized in auditing Solidity code. 
