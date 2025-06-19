@@ -27,6 +27,19 @@ VeriSecure is an AI-powered smart contract security auditing platform built nati
 </p>
 
 
+## 🚀 Live Demo & Verification
+
+**📄 Deployed Contract:** `0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c`
+
+**🔍 Verify on Starkscan:** [View Live Contract](https://sepolia.starkscan.co/contract/0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c)
+
+**🧪 Test the Platform:** [Try VeriSecure Now](https://verisecure-audit.vercel.app/) 
+
+**📋 Sample Audit Report:** [View Generated Report](web/public/audit-report.pdf)
+
+**🎬 Demo Video:** [YouTube Demo](https://www.youtube.com/watch?v=5IZPAfCl4jM)
+
+
 
 ## ✨ Key Features
 
@@ -52,17 +65,6 @@ VeriSecure is an AI-powered smart contract security auditing platform built nati
 - **Theme Options**: Choose between dark and light modes
 - **Works Everywhere**: Optimized for desktop, tablet, and mobile devices
 - **Drag & Drop**: Simply drag your files to start the audit process
-
-## 🚀 Live Demo & Verification
-
-**📄 Deployed Contract:** `0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c`
-
-**🔍 Verify on Starkscan:** [View Live Contract](https://sepolia.starkscan.co/contract/0x0455c60412d2e77b1763699575163d8a72c75759b2ca6f7124bbe4237baa974c)
-
-**🧪 Test the Platform:** [Try VeriSecure Now](https://verisecure-audit.vercel.app/) 
-
-**📋 Sample Audit Report:** [View Generated Report](web/public/audit-report.pdf)
-
 
 ## 🎯 Complete Usage Workflow
 
