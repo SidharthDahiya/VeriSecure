@@ -37,7 +37,7 @@ VeriSecure is an AI-powered smart contract security auditing platform built nati
 
 **📋 Sample Audit Report:** [View Generated Report](web/public/audit-report.pdf)
 
-**🎬 Demo Video:** [YouTube Demo](https://www.youtube.com/watch?v=5IZPAfCl4jM)
+**🎬 Platform Demo Video:** [YouTube Demo](https://www.youtube.com/watch?v=5IZPAfCl4jM)
 
 
 
