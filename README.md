@@ -136,10 +136,10 @@ VeriSecure/
 
 Ensure you have the following tools installed:
 
-- Node.js (v16 or higher)  
+
 - [Scarb](https://docs.swmansion.com/scarb/) (Cairo package manager)  
 - [Starkli](https://book.starknet.io/docs/hello_starknet/cli.html) (Starknet CLI tools)  
-- Git
+
 
 
 
